@@ -24,3 +24,84 @@ int main()
 }
 
 ```
+
+## 進階題：讀入整數反序列印
+```C
+#include <stdio.h>
+int main()
+{
+	int space=1, a[10]={};
+	for(int i=0; space>0; i++){
+		scanf("%d", &space);
+		if(space!=0) a[i]=space;
+	}
+	for(int i=9; i>=0; i--){
+		if(a[i]!=0) printf("%d ", a[i]);
+	}printf("\n");
+}
+
+
+```
+
+## 進階題：A的B次方函數 
+```C
+#include <stdio.h>
+int MYPOWER(int a, int b)
+{
+	int ans=1;
+	for(b;b!=0;b--){
+		ans*=a;
+	}
+	return ans;
+}
+int main(void)
+{
+	int a,b;
+	scanf("%d%d",&a,&b);
+	printf("[%d]",MYPOWER(a,b));
+	return 0;
+}
+```
+
+## 進階題：漸增數列相加
+```C
+#include <stdio.h>
+int main()
+{
+	int n, ans=0;
+	scanf("%d", &n);
+	for(n; n>1; n--){
+		int sam=(n-1)*n;
+		ans += sam;
+	}
+	printf("%d\n", ans);
+}
+```
+
+## 基礎題：找零錢
+```C
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	printf("%d=", n);
+	printf("50*%d", n/50);
+	printf("+5*%d+1*%d\n", n%50/5, n%50%5);
+}
+```
+
+## 基礎題：因數個數 
+```C
+#include <stdio.h>
+int main()
+{
+	int n, ans=0;
+	scanf("%d", &n);
+	
+	for(int i=1; i<=n; i++){
+		if(n%i==0) ans++;
+	}
+	printf("%d\n", ans);
+}
+```
