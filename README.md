@@ -1,37 +1,26 @@
-## Welcome to GitHub Pages
+## 大一下-程設-week01-作業
 
-You can use the [editor on GitHub](https://github.com/dwenyuan0410/week01-homework01.github.io/edit/gh-pages/README.md) to maintain and preview the content for your website in Markdown files.
+# 進階題：分式化簡
+```C
+#include <stdio.h>
+int main()
+{
+	int a, b, c;
+	scanf("%d%d", &a, &b);
+	int a1=a, b1=b;
+	if(a<b){
+		int temp=a;
+		a=b;
+		b=temp;
+	}
+	do{
+		c=a%b;
+		a=b;
+		b=c;
+		c=a%b;
+	}while(c!=0);
+	printf("%d %d\n", a1/b, b1/b);
+	
+}
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dwenyuan0410/week01-homework01.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
