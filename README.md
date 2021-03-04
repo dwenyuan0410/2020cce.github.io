@@ -136,5 +136,10 @@ int main()
 
 ## 指標1
 *p=&n1 => 將p指標指向n1的位址
+```C
+#include <stdio.h>
+int main()
+{}
+```
 ## 指標2
 ## 指標3
