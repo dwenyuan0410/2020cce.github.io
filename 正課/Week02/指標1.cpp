@@ -4,7 +4,7 @@ int main()
 	int n1=10, n2=20, n3=30;
 	printf("n1:%d n2:%d n3:%d\n", n1, n2, n3);
 
-	int *p=&n1; /*將p指標指向n1的位址*/
+	int *p=&n1; /*簣Np竄羹翹��竄羹礎Vn1穠繙礎穫禮}*/
 	*p=200;
 	printf("n1:%d n2:%d n3:%d\n", n1, n2, n3);
 }
