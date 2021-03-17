@@ -8,13 +8,13 @@ void printfALL()
 }
 int main()
 {
-	int  *p=&a[0]; /*�ŧi*/
+	int  *p=&a[0]; /*«Å§i*/
 	*p=222;
 		printfALL();
-	int *p2=p+2; /*�ŧi*/
+	int *p2=p+2; /*«Å§i*/
 	*p=666;
 		printfALL();
-	p--; /*�ϥ�*/
+	p--; /*¨Ï¥Î*/
 	*p=555;
 		printfALL();
 }
