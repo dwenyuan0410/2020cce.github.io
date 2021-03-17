@@ -404,3 +404,68 @@ int main()
 	printf("%d\n", max-min);
 }
 ```
+## Week03-正課
+### 指標4
+```C
+#include <stdio.h>
+int a[5]={0,10,20,30,40};
+int main()
+{
+	int *p=&a[0];
+	*p=222;
+	
+	p=p+2; /*現在p裡面放的是a[2]的位址*/
+	*p=666;
+}
+```
+### 指標5
+```C
+#include <stdio.h>
+int a[5]={0,10,20,30,40};
+int main()
+{
+	int *p=&a[0]; /*p指向a[0]*/
+	*p=222;
+	
+	p=p+2; /*p指向a[2]*/
+	*p=666;
+	
+	p--; /*p指向a[1]*/
+	*p=555;
+}
+```
+### 指標6
+```C
+#include <stdio.h>
+int a[5]={0,10,20,30,40};
+void printfALL()
+{
+	for(int i=0; i<5; i++){
+		printf("%d", a[i]);
+	}printf("\n");	
+}
+int main()
+{
+	int  *p=&a[0]; /*宣告*/
+	*p=222;
+		printfALL();
+	int *p2=p+2; /*宣告*/
+	*p=666;
+		printfALL();
+	p--; /*使用*/
+	*p=555;
+		printfALL();
+}
+```
+### 指標7
+```C
+#include <stdio.h>
+#include <stdlib.h>
+int a[5]={0,1,2,3,4}; /*in Global variables*/
+int main()
+{
+	int a[5]={0,10,20,30,40}; /*in main*/
+	int*p=(int*)malloc(sizeof(int)*10); /*在外部的陣列*/
+	return 0;
+}
+```
