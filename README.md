@@ -13,7 +13,7 @@ int main()
 	int a, b, c;
 	scanf("%d%d", &a, &b);
 	int a1=a, b1=b;
-	if(a<b){
+	if(a<b){		/*a要大於B*/
 		int temp=a;
 		a=b;
 		b=temp;
@@ -39,8 +39,8 @@ my ans:
 #include <stdio.h>
 int main()
 {
-	int space=1, a[10]={};
-	for(int i=0; space>0; i++){
+	int space=1, a[10]={}; /*終止式=> space>0，是因為題目輸入0表示結束*/
+	for(int i=0; space>0; i++){	
 		scanf("%d", &space);
 		if(space!=0) a[i]=space;
 	}
