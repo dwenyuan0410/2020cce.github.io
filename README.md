@@ -469,3 +469,244 @@ int main()
 	return 0;
 }
 ```
+## Week04-實習課
+### 進階題：除惡務盡
+
+my ans:
+```C
+#include <stdio.h>
+char a[100];
+int main()
+{
+	scanf("%s", &a);
+	
+	for(int i=0; a[i]!=0; i++){
+		if(a[i]!=50)
+			printf("%c", a[i]);
+	}
+	printf("\n");
+}
+```
+### 進階題：擲骰統計
+
+my ans:
+```C
+#include <stdio.h>
+char s[100];
+int a, b, c, d, e, f;
+int main()
+{
+	scanf("%s", &s);
+	
+	for(int i=0; s[i]!=0; i++){
+		if(s[i]=='1') a++;
+		else if(s[i]=='2') b++;
+		else if(s[i]=='3') c++;
+		else if(s[i]=='4') d++;
+		else if(s[i]=='5') e++;
+		else if(s[i]=='6') f++;
+	}
+	
+	printf("1:%d\n", a);
+	printf("2:%d\n", b);
+	printf("3:%d\n", c);
+	printf("4:%d\n", d);
+	printf("5:%d\n", e);
+	printf("6:%d\n", f);
+}
+```
+### 進階題：函數找整數的最大數字
+
+my ans:
+```C
+#include<iostream>
+int max_digit(int n)
+{
+	int i, a=0;
+	for(int k=1; n>0; k++){
+		i=n%10;
+		n=n/10;
+		if(i>a)
+			a=i;
+	}
+	return a;
+}
+int main(void){
+  int n;
+  scanf("%d", &n);
+  printf("[%d]", max_digit(n));
+  return 0;
+}
+
+```
+### 進階題：星星等腰三角
+
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	int n, star=0;
+	scanf("%d",&n);
+	/*star=2*i-1*/
+	/*space=n-star*/
+	
+	for(int i=1; n>0; i++){
+		star=2*i-1;
+		for(int i=1; i<n; i++)
+			printf(" ");
+		n--;
+		for(int i=1; i<=star; i++)
+			printf("*");
+			
+		printf("\n");
+	}
+}
+```
+### 基礎題：分開整數的每個數字
+
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	int n, a[5]={0};
+	scanf("%d", &n);
+	
+	for(int i=0; i<5; i++){
+		a[i]=n%10;
+		n=n/10;
+	}
+	
+	for(int i=4; i>0; i--){
+		printf("%d   ", a[i]);
+	}printf("%d", a[0]);
+	
+}
+```
+### 基礎題：字元判別
+
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	char n;
+	scanf("%c", &n);
+	
+	if(n>47 && n<58)
+		printf("D");
+	
+	else if(n>64 && n<91)
+		printf("U");
+		
+	else if(n>96 && n<123)
+		printf("L");
+		
+	else
+		printf("O");
+}
+```
+### 基礎題：數字之首 
+
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	int n, i;
+	scanf("%d", &n);
+	
+	for(int k=1; n>0; k++){
+		i= n%10;
+		n= n/10;
+	}
+	printf("%d", i);
+}
+```
+### 基礎題：輸出從0到N的偶數 
+
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	
+	for(int i=1;i<=n;i++){
+		if(i%2==0)
+			printf("%d ", i);
+	}
+}
+```
+## Week04-正課
+### struct DATA { float x, y, z; }; 結構的宣告、定義
+```C
+#include <stdio.h>
+struct DATA{
+	float x, y, z;
+};
+int main()
+{
+
+}
+```
+### 結構的使用, 把變數的 x, y, z 用小數點拿出來用
+```C
+#include <stdio.h>
+struct DATA{ ///宣告
+	float x, y, z;
+}  point1;
+///point1 是變數，長得像DATA
+///DATA裡面有 x, y, z
+int main()
+{
+	point1.x=3;///使用(裡面的值)
+	point1.y=5;///使用
+	point1.z=7;///使用
+	pointf("%f %f %f\n", point1.x, point1.y, point1.z);
+}
+```
+### 很多結構的陣列, 看如何使用
+```C
+#include <stdio.h>
+struct DATA { ///宣告
+	float x, y, z;///定義裡面有 x, y, z
+} point1 ;
+struct DATA points[5];
+///point1 是變數，長得像DATA
+///DATA裡面有 x, y, z
+int main()
+{
+	///int b;
+	///int a[5];
+	for(int i=0; i<5; i++){
+		points[i].x = i*10;
+		points[i].y = 20;
+		points[i].z = 0;
+		pointf("%f %f %f\n", points[i].x, points[i].y, points[i].z);
+	}
+}
+
+```
+### 觀察 global 變數 vs. local 變數
+```C
+#include <stdio.h>
+struct DATA { 
+	float x, y, z;
+} a, b, c;
+struct DATA points[5];
+
+int main()
+{
+	struct DATA d, e, f;
+	
+	for(int i=0; i<5; i++){
+		points[i].x = i*10;
+		points[i].y = 20;
+		points[i].z = 0;
+		pointf("%f %f %f\n", points[i].x, points[i].y, points[i].z);
+	}
+}
+```
