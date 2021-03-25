@@ -757,7 +757,21 @@ int main(void)
 
 my ans:
 ```C
-
+#include <stdio.h>
+int f(int n)
+{
+	if(n>=0)
+		return n;
+	else
+		return -n;
+}
+int main(void)
+{
+	int n;
+	scanf("%d",&n);
+	printf("[%d]",f(n));
+	return 0;
+}
 ```
 ### 基礎題：N數之和
 輸入一個整數N，之後讀入N個整數，請輸出其和。 
@@ -765,9 +779,62 @@ my ans:
 
 my ans:
 ```C
-
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	int ans=0, a;
+	for(int i=1; i<=n; i++){
+		scanf("%d", &a);
+		ans += a;
+	}
+	printf("%d\n", ans);
+}
 ```
+### 基礎題：三數極大
+輸入三個正整數，輸出其最大值。 
+數字範圍：整數1 – 100 
 
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	int min=0, mid=0, max=0;
+	for(int i=1; i<4; i++){
+		int a;
+		scanf("%d", &a);
+		if(a>max){
+			min=mid;
+			mid=max;
+			max=a;
+		}
+		else if(a>mid){
+			min=mid;
+			mid=a;
+		}
+		else{
+			min=a;
+		}
+	}
+	printf("%d\n", max);
+}
+```
+### 基礎題：計算商數
+輸入兩個整數a，b，輸出a除以b的商。 
+數字範圍：整數 1 – 10000 
+
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	int a, b;
+	scanf("%d%d", &a, &b);
+	printf("%d\n", a/b);
+}
+```
 ## Week05-正課
 ### 字串1
 老師以今天考試「除惡務盡」為例, 示範了2種寫法, 其中一種是用字串的for迴圈來印。這種字串的 for迴圈很重要 for(int i=0; line[i]!=0; i++){...} 請你把程式寫出來, 並且標示 line[i]!=0 的地方 (  0  其實就是 '\0' )
@@ -833,6 +900,22 @@ int main()
     for(int i=0; i<5; i++){
         p = line[i];
         printf("%s\n", line[i]);
+    }
+
+}
+```
+### 字串5
+
+```C
+#include <stdio.h>
+int a[3][3]={{1,2,3}, {4,5,6}, {7,8,9,} };
+int main()
+{
+    for(int i=0; i<3; i++){
+        for(int j=0; j<3; j++){
+            printf("%d ", a[i][j]);
+        }
+        printf("\n");
     }
 
 }
