@@ -725,8 +725,49 @@ int main()
 
 my ans:
 ```C
+#include <stdio.h>
+int main()
+{
+	int a, n, ans=0;
+	scanf("%d", &a);
+	n=a;
+	
+	for(int i=1; n>0; i++){
+		ans=n%10+ans*10;
+		n=n/10;
+	}
+	printf("%d+%d=%d\n", a, ans, a+ans);題目名稱：絕對值函數。
+}
+```
+### 進階題：絕對值函數
+題目名稱：絕對值函數。
+題目內容：設計一個函數f(n)，會回傳n的絕對值。
+數字範圍：整數1 – 10000
+程式限制：不得使用abs()函數。不得變更已給定的主程式。
+主程式：
+```C
+int main(void)
+{
+	int n;
+	scanf("%d",&n);
+	printf("[%d]",f(n));
+	return 0;
+}
+```
+
+my ans:
+```C
 
 ```
+### 基礎題：N數之和
+輸入一個整數N，之後讀入N個整數，請輸出其和。 
+數字範圍：N=整數1 – 10，其餘整數1 – 100。 
+
+my ans:
+```C
+
+```
+
 ## Week05-正課
 ### 字串1
 老師以今天考試「除惡務盡」為例, 示範了2種寫法, 其中一種是用字串的for迴圈來印。這種字串的 for迴圈很重要 for(int i=0; line[i]!=0; i++){...} 請你把程式寫出來, 並且標示 line[i]!=0 的地方 (  0  其實就是 '\0' )
@@ -761,6 +802,7 @@ int main()
 }
 ```
 ### 字串3
+老師把上面的程式, 加2行新的: char line3[]="majority"; char line4[]={'m','a','j','o','r','i','t','y'} 然後就在 printf("你知道嗎, 竟然出事了===%s==\n", line4);
 
 ```C
 #include <stdio.h>
@@ -778,4 +820,20 @@ int main()
     char line4[10]={'p','r','o','p','e','r'};
     printf("%s\n", line3);
     printf("%s\n", line4);
+```
+### 字串4
+老師示範 char line[5][10] = {"decline", "proper", "majority", "bullet", "shop"}; 並且教大家 「左邊」「右邊」的技巧。請在 CodeBlocks 畫出來
+```C
+#include <stdio.h>
+
+int main()
+{
+    char line[5][10] ={"decline", "hello", "nice", "proper", "bullet"};
+    char *p;
+    for(int i=0; i<5; i++){
+        p = line[i];
+        printf("%s\n", line[i]);
+    }
+
+}
 ```
