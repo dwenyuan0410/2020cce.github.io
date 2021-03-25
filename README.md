@@ -710,3 +710,23 @@ int main()
 	}
 }
 ```
+## Week05-實習課
+## Week05-正課
+### 字串1
+老師以今天考試「除惡務盡」為例, 示範了2種寫法, 其中一種是用字串的for迴圈來印。這種字串的 for迴圈很重要 for(int i=0; line[i]!=0; i++){...} 請你把程式寫出來, 並且標示 line[i]!=0 的地方 (  0  其實就是 '\0' )
+```C
+#include <stdio.h>
+char line[20]="233233233233233233";
+int main()
+{
+    char *p = line;
+    //scanf("%s", line);
+    for(int i=0; line[i]!=0; i++){
+        p = &line[i];
+        char c = line[i];
+        if( c!='2' )
+            printf("%c", c);
+    }
+    printf("\n");
+}
+```
