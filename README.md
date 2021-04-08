@@ -927,7 +927,22 @@ int main()
 
 my ans:
 ```C
-
+#include <stdio.h>
+int f(int n)
+{
+	int ans=0;
+	for(int i=1; n>0; i++){
+		ans= ans*10+n%10;
+		n= n/10;
+	}
+	return ans;
+}
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	printf("%d\n", f(n));
+}
 ```
 ### 進階題：陣列找出現次數
 讀入一個正整數的數列(逐一輸入正整數，輸入0表示結束，數列至多包含10個整數)，
@@ -936,6 +951,27 @@ my ans:
 
 my ans:
 ```C
+#include <stdio.h>
+int main()
+{
+	int a[10]={}, b;
+	for(int i=0;; i++){
+		scanf("%d", &b);
+		if(b>0) 
+			a[i]=b;
+		else
+			break;
+	}
+	
+	int n, ans=0;
+	scanf("%d", &n);
+	
+	for(int i=0; i<10; i++){
+		if(a[i]==n)
+			ans++;
+	}
+	printf("%d\n", ans);
+}
 
 ```
 ### 進階題：判斷大小
@@ -946,6 +982,21 @@ my ans:
 
 my ans:
 ```C
+#include <stdio.h>
+int f(int a,int b){
+	if(a<b)
+		return -1;
+	if(a==b)
+		return 0;
+	if(a>b)
+		return 1;
+}
+int main(){
+    int a, b;
+    scanf("%d %d", &a, &b);
+    printf("%d",f(a,b));
+    return 0;
+}
 
 ```
 ### 進階題：計算一列整數的總和
@@ -953,14 +1004,35 @@ my ans:
 
 my ans:
 ```C
-
+#include <stdio.h>
+int a[100];
+int main()
+{
+	int total=0;
+	for(int i=0; a[i-1]!=999; i++){
+		printf("Enter an integer ( 999 to end ): \n");
+		scanf("%d", &a[i]);
+		total+= a[i];
+	}
+	printf("The total is: %d", total-999);
+}
 ```
 ### 基礎題：找零錢
 假設有50元、10元、5元和1元等4種硬幣，請輸入一個金額，並顯示等同於該金額所需的最少硬幣組合。
 
 my ans:
 ```C
-
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	printf("%d=50*%d", n, n/50);
+	n=n%50;
+	printf("+10*%d", n/10);
+	n=n%10;
+	printf("+5*%d+1*%d", n/5, n%5);
+}
 ```
 ### 基礎題：計程車資計算
 輸入里程公尺數，輸出應付的車資。
@@ -968,9 +1040,59 @@ my ans:
 
 my ans:
 ```C
-
+#include <stdio.h>
+int main()
+{
+	int m, price=100;
+	scanf("%d", &m);
+	if(m-1500>0){
+		m-= 1500;
+		price+= m/250*5;
+		if(m%250>0)
+			price+= 5; 
+	}
+	printf("%d", price);
+}
 ```
-### 
+### 基礎題：計算餘數
+輸入兩個整數a b，輸出a除以b的餘數
+
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	int a, b;
+	scanf("%d%d", &a, &b);
+	printf("%d", a%b);
+}
+```
+### 基礎題：整數轉換等級
+輸入一個整數成嫧，如果所輸入的整數大於或等於90，則輸出A; 
+如果輸入的整數小於90但大於等於80，則輸出B;
+如果小於80但大於或等於70，則輸出C;
+如果小於70但大於或等於60，則輸出D;
+如為其他整數則輸出F。 
+
+my ans:
+```C
+#include <stdio.h>
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	if(n>=90)
+		printf("A");
+	else if(n>=80)
+		printf("B");
+	else if(n>=70)
+		printf("C");
+	else if(n>=60)
+		printf("D");
+	else
+		printf("F");
+}
+```
 ## Week07-正課
 ### 安裝 C Tutor
 安裝方式:
@@ -988,4 +1110,4 @@ my ans:
 7.執行 C Tutor: python bottle_server.py 
   這樣就會把 Python Tutor 的 web service 跑起來, 使用 http://localhost:8003 。
   (Windows 會跳出防火牆的提示畫面, 問是否要讓 python.exe 使用網路功能。記得要同意 python.exe 使用網路功能)
-**使用: 在同一台電腦裡, 用 Chrome 開啟 http://localhost:8003 看能不能看到程式輸入畫面。如果可以輸入程式, 按下「Visualize Execution看執行結果」
+8.使用: 在同一台電腦裡, 用 Chrome 開啟 http://localhost:8003 看能不能看到程式輸入畫面。如果可以輸入程式, 按下「Visualize Execution看執行結果」
