@@ -920,3 +920,72 @@ int main()
 
 }
 ```
+## Week06-實習課
+### 進階題：函數反序排列數字
+設計一個函數f(n)，該函數可以傳回整數n的數字反序排列所組成的整數。 
+數字範圍：整數 1 – 9999 (不含10的倍數) 
+
+my ans:
+```C
+
+```
+### 進階題：陣列找出現次數
+讀入一個正整數的數列(逐一輸入正整數，輸入0表示結束，數列至多包含10個整數)，
+之後再讀入一個正整數，程式可以找出該整數出現在數列中的次數。 
+數字範圍：正整數 1 – 9 
+
+my ans:
+```C
+
+```
+### 進階題：判斷大小
+寫一方法能傳入2個整數，如果第一個數字比第二個數字小，則回傳-1;
+如果兩個數字相等，則回傳0; 
+如果第一個數字比第二個數字大，則回傳1。
+印出比較後的結果。 
+
+my ans:
+```C
+
+```
+### 進階題：計算一列整數的總和
+請撰寫一個程式計算並印出數個整數的加總。假設以999當成警示值。
+
+my ans:
+```C
+
+```
+### 基礎題：找零錢
+假設有50元、10元、5元和1元等4種硬幣，請輸入一個金額，並顯示等同於該金額所需的最少硬幣組合。
+
+my ans:
+```C
+
+```
+### 基礎題：計程車資計算
+輸入里程公尺數，輸出應付的車資。
+計程車資計算方式為: 起跳100元(1500公尺)，續跳5元(每250公尺)註:不足250公尺也要5元。
+
+my ans:
+```C
+
+```
+### 
+## Week07-正課
+### 安裝 C Tutor
+安裝方式:
+
+1.安裝 Anaconda: 先在Windows電腦安裝 Anaconda Windows x64 位元版, 全部照預設值 Anaconda3-2020.11-Windows-x86_64.exe
+2.安裝 Git for Windows: (我用 git version 2.30.0.windows.2), 
+  我安裝它的原因, 是因為它使用 Chrome 登入 github 帳號時, 不會有問題。
+  (不知道為什麼, 若使用 Anaconda 裡用 conda install git 安裝後, 使用git指令, 在提示輸入github密碼後, 我會收到不安全的警告信)
+3.開啟 Anaconda Prompt 小黑畫面
+4.下載 C Tutor: git clone https://github.com/jsyehmcu/ctutor 下載這份 C Tutor 的程式。
+  要記得你放在哪個目錄(cd desktop), 之後要進到目錄啟動 server。
+5.安裝 bottle 瓶子: pip install bottle 
+  這樣就能讓 Python Tutor / C Tutor 的專案可使用簡易的 bottle server 。
+6.進到 C Tutor 目錄中: cd ctutor
+7.執行 C Tutor: python bottle_server.py 
+  這樣就會把 Python Tutor 的 web service 跑起來, 使用 http://localhost:8003 。
+  (Windows 會跳出防火牆的提示畫面, 問是否要讓 python.exe 使用網路功能。記得要同意 python.exe 使用網路功能)
+**使用: 在同一台電腦裡, 用 Chrome 開啟 http://localhost:8003 看能不能看到程式輸入畫面。如果可以輸入程式, 按下「Visualize Execution看執行結果」
