@@ -1111,3 +1111,5 @@ int main()
   這樣就會把 Python Tutor 的 web service 跑起來, 使用 http://localhost:8003 。
   (Windows 會跳出防火牆的提示畫面, 問是否要讓 python.exe 使用網路功能。記得要同意 python.exe 使用網路功能)
 8.使用: 在同一台電腦裡, 用 Chrome 開啟 http://localhost:8003 看能不能看到程式輸入畫面。如果可以輸入程式, 按下「Visualize Execution看執行結果」
+
+### qsort() 快速排序
